@@ -1,9 +1,18 @@
 services:
   - type: web
     name: jenkins
-    env: docker
-    image: ayandamthombeni13/jenkins:latest
+    runtime: image
+
+    image:
+      url: docker.io/ayandamthombeni13/jenkins:latest
+
+    plan: starter
+
     disk:
       name: jenkins-data
       mountPath: /var/jenkins_home
       sizeGB: 1
+
+    envVars:
+      - key: JENKINS_OPTS
+        value: --httpPort=10000
