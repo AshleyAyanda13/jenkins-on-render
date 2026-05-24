@@ -2,7 +2,7 @@ services:
   - type: web
     name: jenkins
     env: docker
-    image: your-dockerhub-username/jenkins:latest
+    image: ayandamthombeni13/jenkins:latest
     disk:
       name: jenkins-data
       mountPath: /var/jenkins_home
